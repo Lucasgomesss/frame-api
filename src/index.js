@@ -7,6 +7,7 @@ app.set('view engine', 'ejs')
 app.set('views','./views')
 
 // Define your routes
+require("../route/home")(app )
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
