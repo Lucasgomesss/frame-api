@@ -1,10 +1,22 @@
 // Use "type: commonjs" in package.json to use CommonJS modules
 const express = require('express');
+const bodyParser = require("body-parser")
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
 app.set('view engine', 'ejs')
-app.set('views','./views')
+app.set('views', './views')
+
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded());
+
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 // Define your routes
 require("../route/home")(app)

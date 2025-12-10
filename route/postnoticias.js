@@ -13,12 +13,12 @@ module.exports = (app) => {
                     tiponoticia: tiponoticia,
                     datahoracadastro: new Date()
                 })
-        if(!resultado.acknowledged) {
-            res.json({status:0})
-        }
-        res.json({status:1})
+            if (!resultado.acknowledged) {
+                res.json({ status: 0 })
+            }
+            res.json({ status: 1 })
         } catch (error) {
-            res.json({status:0})
+            res.json({ status: 0 })
         }
     })
 
